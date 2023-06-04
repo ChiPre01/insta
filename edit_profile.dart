@@ -45,7 +45,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
         .collection('users')
         .doc(widget.uid)
         .get();
-    user = User as User?;
+    user = User.fromSnap(snap);
     fullnameController.text = user!.fullname;
     bioController.text = user!.bio;
     setState(() {
